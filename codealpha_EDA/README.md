@@ -1,106 +1,87 @@
-Black Friday Sales Analysis
-Overview
+# Black Friday Sales Analysis
+
+## Overview
 This Jupyter notebook performs exploratory data analysis (EDA) and visualization on Black Friday sales data. The analysis aims to identify customer demographics and purchasing patterns to help ABC Limited, a private lunch package company, make data-driven business decisions.
 
-Dataset
+## Dataset
 The analysis uses a dataset containing 550,068 rows of transaction data with the following features:
 
-Column	Description
-User_ID	Unique identifier for each customer
-Product_ID	Unique identifier for each product
-Gender	Customer gender (F/M)
-Age	Age group (0-17, 18-25, 26-35, 36-45, 46-50, 51-55, 55+)
-Occupation	Occupation code (0-20)
-City_Category	City category (A, B, C)
-Stay_In_Current_City_Years	Years stayed in current city
-Marital_Status	Marital status (0=Single, 1=Married)
-Product_Category_1	Primary product category
-Product_Category_2	Secondary product category
-Product_Category_3	Tertiary product category
-Purchase	Purchase amount
-Key Findings
-1. Age Distribution by City
-Age group 26-35 has the highest number of customers across all city categories
+| Column | Description |
+|--------|-------------|
+| User_ID | Unique identifier for each customer |
+| Product_ID | Unique identifier for each product |
+| Gender | Customer gender (F/M) |
+| Age | Age group (0-17, 18-25, 26-35, 36-45, 46-50, 51-55, 55+) |
+| Occupation | Occupation code (0-20) |
+| City_Category | City category (A, B, C) |
+| Stay_In_Current_City_Years | Years stayed in current city |
+| Marital_Status | Marital status (0=Single, 1=Married) |
+| Product_Category_1 | Primary product category |
+| Product_Category_2 | Secondary product category |
+| Product_Category_3 | Tertiary product category |
+| Purchase | Purchase amount |
 
-City B has the highest concentration of customers in the 26-35 age bracket
+## Key Findings
 
-2. Gender Distribution by Age
-Men make up the majority of buyers across all age groups
+### 1. Age Distribution by City
+- Age group 26-35 has the highest number of customers across all city categories
+- City B has the highest concentration of customers in the 26-35 age bracket
 
-Age group 26-35 has the highest number of male customers (168,835)
+### 2. Gender Distribution by Age
+- Men make up the majority of buyers across all age groups
+- Age group 26-35 has the highest number of male customers (168,835)
 
-3. City Stay Duration
-Most men aged 26-35 in City B have stayed for only 1 year
+### 3. City Stay Duration
+- Most men aged 26-35 in City B have stayed for only 1 year
+- This suggests a transient, potentially young professional demographic
 
-This suggests a transient, potentially young professional demographic
+### 4. Marital Status
+- Single (Marital_Status = 0) men form the largest customer segment
+- Single men aged 26-35 spend significantly more than their married counterparts
 
-4. Marital Status
-Single (Marital_Status = 0) men form the largest customer segment
-
-Single men aged 26-35 spend significantly more than their married counterparts
-
-5. Purchase Analysis
+### 5. Purchase Analysis
 Total purchase amount by age group:
+- 26-35: 1.588B
+- 36-45: 783M
+- 18-25: 708M
+- Others: significantly lower
 
-26-35: 1.588B
-
-36-45: 783M
-
-18-25: 708M
-
-Others: significantly lower
-
-Business Recommendations
+## Business Recommendations
 Based on the analysis, ABC Limited should target:
+- **Primary Target Segment**: Single men aged 26-35
+- **Geographic Focus**: City B
+- **Key Insight**: This demographic shows the highest purchase volume and spending patterns
 
-Primary Target Segment: Single men aged 26-35
+## Tools & Libraries Used
+- Python 3
+- NumPy - Numerical operations
+- Pandas - Data manipulation and analysis
+- Matplotlib - Data visualization
 
-Geographic Focus: City B
+## Data Processing Steps
+1. Data loading and inspection
+2. Missing value handling (filled with mean values for Product_Category_2 and Product_Category_3)
+3. Duplicate checking
+4. Exploratory analysis with grouped aggregations
+5. Visualization of key metrics
 
-Key Insight: This demographic shows the highest purchase volume and spending patterns
+## Visualizations Created
+- Age distribution by city category (bar chart)
+- Age distribution by gender (bar chart)
+- Age distribution by occupation (bar chart)
+- City stay duration analysis for men (bar chart)
+- Marital status analysis for men (bar chart)
+- Product category distribution (bar chart)
+- Purchase amount by age group (bar chart)
 
-Tools & Libraries Used
-Python 3
-
-NumPy - Numerical operations
-
-Pandas - Data manipulation and analysis
-
-Matplotlib - Data visualization
-
-Data Processing Steps
-Data loading and inspection
-
-Missing value handling (filled with mean values for Product_Category_2 and Product_Category_3)
-
-Duplicate checking
-
-Exploratory analysis with grouped aggregations
-
-Visualization of key metrics
-
-Visualizations Created
-Age distribution by city category (bar chart)
-
-Age distribution by gender (bar chart)
-
-Age distribution by occupation (bar chart)
-
-City stay duration analysis for men (bar chart)
-
-Marital status analysis for men (bar chart)
-
-Product category distribution (bar chart)
-
-Purchase amount by age group (bar chart)
-
-How to Run
-Ensure the dataset file train.csv is in the working directory
-
-Install required libraries:
-pip install numpy pandas matplotlib
-
-Run the Jupyter notebook cells in sequence
+## How to Run
+1. Ensure the dataset file `train.csv` is in the working directory
+2. Install required libraries:
+   ```bash
+   pip install numpy pandas matplotlib
+   ``
+   
+## Run the Jupyter notebook cells in sequence
 
 Conclusion
 The analysis successfully identified the most profitable customer segment for ABC Limited: single men aged 26-35 living in City B. This insight can guide marketing strategies and inventory planning for maximum return on investment.
